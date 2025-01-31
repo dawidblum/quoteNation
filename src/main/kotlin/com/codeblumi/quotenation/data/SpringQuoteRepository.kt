@@ -1,10 +1,10 @@
 package com.codeblumi.quotenation.data
 
-import com.codeblumi.quotenation.model.Quote
-import org.springframework.data.repository.CrudRepository
+import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.stereotype.Repository
 
-interface SpringQuoteRepository : CrudRepository<Quote, String> {
-    fun insertQuote(quote: Quote)
-    fun getQuoteById(id: String): Quote?
-    fun getQuotesByAuthor(author: String): List<Quote>
+@Repository
+interface SpringQuoteRepository : JpaRepository<QuoteEntity, String> {
+    fun getQuoteById(id: String): QuoteEntity?
+    fun getQuotesByAuthor(author: String): List<QuoteEntity>
 }

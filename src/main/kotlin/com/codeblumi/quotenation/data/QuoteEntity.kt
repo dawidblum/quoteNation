@@ -1,5 +1,6 @@
 package com.codeblumi.quotenation.data
 
+import com.codeblumi.quotenation.model.Quote
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
@@ -14,4 +15,22 @@ class QuoteEntity(
     val text: String,
     @Column
     val author: String
-)
+) {
+    companion object {
+        fun fromQuote(quote: Quote): QuoteEntity {
+            return QuoteEntity(
+                id = quote.id,
+                text = quote.text,
+                author = quote.author
+            )
+        }
+    }
+
+    fun toQuote(): Quote {
+        return Quote(
+            id = id,
+            text = text,
+            author = author
+        )
+    }
+}
