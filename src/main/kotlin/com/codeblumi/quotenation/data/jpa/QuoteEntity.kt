@@ -1,4 +1,4 @@
-package com.codeblumi.quotenation.data
+package com.codeblumi.quotenation.data.jpa
 
 import com.codeblumi.quotenation.model.Quote
 import jakarta.persistence.Column

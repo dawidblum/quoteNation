@@ -1,10 +1,10 @@
 package com.codeblumi.quotenation.service
 
-import com.codeblumi.quotenation.data.QuoteEntity
+import com.codeblumi.quotenation.data.jpa.QuoteEntity
 import com.codeblumi.quotenation.model.Quote
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.stereotype.Component
-import com.codeblumi.quotenation.data.SpringQuoteRepository
+import com.codeblumi.quotenation.data.jpa.SpringQuoteRepository
 
 @Component
 class KafkaNewQuotesListener(
