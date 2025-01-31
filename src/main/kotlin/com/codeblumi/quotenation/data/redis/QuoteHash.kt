@@ -4,7 +4,7 @@ import com.codeblumi.quotenation.model.Quote
 import jakarta.persistence.Id
 import org.springframework.data.redis.core.RedisHash
 
-@RedisHash("Quote")
+@RedisHash("quote")
 data class QuoteHash(
     @Id
     val id: String,
