@@ -1,0 +1,17 @@
+package com.codeblumi.quotenation.data
+
+import jakarta.persistence.Column
+import jakarta.persistence.Entity
+import jakarta.persistence.Id
+import jakarta.persistence.Table
+
+@Entity
+@Table(name = "quotes")
+class QuoteEntity(
+    @Id
+    val id: String,
+    @Column
+    val text: String,
+    @Column
+    val author: String
+)
