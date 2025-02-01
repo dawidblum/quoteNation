@@ -12,13 +12,13 @@ import com.codeblumi.quotenation.data.redis.RedisQuoteRepository
 
 @Component
 class KafkaNewQuotesListener(
-    private val quoteService: SpringQuoteRepository,
+    private val quoteRepository: SpringQuoteRepository,
     private val redisQuoteRepository: RedisQuoteRepository,
     private val redisAuthorQuotesRepository: RedisAuthorQuotesRepository
 ) {
     @KafkaListener(topics = ["quotes"])
     fun listen(newQuote: Quote) {
-        quoteService.save(QuoteEntity.fromQuote(newQuote))
+        quoteRepository.save(QuoteEntity.fromQuote(newQuote))
             .also { redisQuoteRepository.save(QuoteHash.fromQuote(newQuote)) }
             .also { saveAuthorQuotes(newQuote) }
     }
