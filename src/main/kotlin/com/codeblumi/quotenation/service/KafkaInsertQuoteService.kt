@@ -9,9 +9,8 @@ class KafkaInsertQuoteService(
     private val kafkaTemplate: KafkaTemplate<String, Quote>,
     private val identifierProvider: IdentifierProvider
 ) : InsertQuoteService {
-    override fun insertQuote(text: String, author: String) {
-        Quote(identifierProvider.provide(), text, author).run {
-            kafkaTemplate.send("quotes", this)
+    override fun insertQuote(text: String, author: String) =
+        identifierProvider.provide().also {
+            kafkaTemplate.send("quotes", Quote(it, text, author))
         }
-    }
 }

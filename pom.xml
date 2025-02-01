@@ -12,6 +12,7 @@
     <artifactId>quoteNation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>quoteNation</name>
+    <packaging>jar</packaging>
     <description>quoteNation</description>
     <url/>
     <licenses>
