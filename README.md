@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="./Logo.png" width="50%"/>
+	<img src="./logo.png" width="50%"/>
 </p>
 <h3>A simple application for managing quotes. It allows users to:</h3>
 
